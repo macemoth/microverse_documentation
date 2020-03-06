@@ -18,6 +18,7 @@ Principles
 
 Architecture
 ------------
+Please refer to main article: 'Architecture'_
 
 External Interfaces
 -------------------

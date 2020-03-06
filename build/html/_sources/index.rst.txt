@@ -10,5 +10,13 @@ Welcome to Microverse's documentation!
    :maxdepth: 2
    :caption: Contents:
 
-   content/vision
+   vision
+   organization
+   architecture
+   technologies
+
+
+Gender clause
+-------------
+Whenever words are used in the masculine or neutral gender in this document, they shall be read and construed as in the masculine, feminine or neutral gender, whenever they should so apply.
 

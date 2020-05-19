@@ -17,7 +17,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'Microverse Documentation'
+project = 'Microverse Dokumentation'
 copyright = '2020, Microverse Team'
 author = 'Microverse Team'
 

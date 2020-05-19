@@ -10,10 +10,9 @@ Welcome to Microverse's documentation!
    :maxdepth: 2
    :caption: Contents:
 
+   installation
+   userdoc
    vision
-   organization
-   architecture
-   technologies
 
 
 Gender clause

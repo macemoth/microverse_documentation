@@ -100,12 +100,6 @@ Persistency
 ~~~~~~~~~~~~
 The game state, (i.e. player's progress or crafted items) is stored locally as one or multiple text files. The exact methods to access these files is yet to be determined, suiting the platform's needs and following it's best practices.
 
-...to be continued
-
-Architecture
-------------
-Please refer to main article: :doc:`architecture`
-
 External Interfaces
 -------------------
 External interfaces are given by the Microbiology and Chemistry theme surrounding the game. Interfaces are e.g. molecule or virus data which is acquired by databases such as PDB_ or VIPER_. Since there is no need for a real-time pipeline, the conversion of this data is not a part of *Microverse* itself, but of development. It is primarily handled by the Blender_ Software and secondarily by various Molecular Graphics tools.

@@ -12,6 +12,7 @@ Welcome to Microverse's documentation!
 
    installation
    userdoc
+   spielanleitung
    vision
 
 

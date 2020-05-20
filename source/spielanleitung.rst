@@ -12,9 +12,9 @@ Der Nanobot kann mit den Tasten *A, S, D, F* gesteuert werden. Eine Liste aller 
 Taste              Effekt
 ----------------   ---------------------------
 W                  Nanobot nach vorne bewegen
-A                     "         links
-S                     "         hinten
-D                     "         rechts
+A                  Nanobot nach links bewegen
+S                  Nanobot nach hinten bewegen
+D                  Nanobot nach rechts bewegen
 F                  Virus / Bakterium aufnehmen
 I                  Inventar öffnen
 ESC                Spiel pausieren

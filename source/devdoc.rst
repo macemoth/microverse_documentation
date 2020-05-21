@@ -1,6 +1,6 @@
-Installation (Entwickler)
-=========================
-Die folgende Installation richtet sich an Entwickler, die an der Weiterentwicklung von *Microverse* interessiert sind. Eine Benutzeranleitung ist unter :doc:`userdoc` gegeben.
+Informationen für Entwickler
+============================
+Diese Informationen richten sich an Entwickler, die an der Weiterentwicklung von *Microverse* interessiert sind. Eine Benutzeranleitung ist unter :doc:`userdoc` gegeben.
 
 Voraussetzungen
 ---------------
@@ -34,3 +34,32 @@ Grundsätzlich dürfen keine *Commits* direkt auf den *master*-Branch erfolgen.
 - Bei grösseren Änderungen sollte ein eigener Branch erstellt werden. Nach Fertigstellung der Änderungen kann ein *Pull-Request* in den *develop*-Branch getätigt werden.
 
 .. _GitLab: https://microverse.sns.network
+
+Testen
+------
+Für alle Tests wird das NUnit_ Framework verwendet und müssen über den TestRunner von Unity ausgeführt werden. Es wird zwischen zwei Arten von Tests unterschieden:
+
+- *EditorMode*-Tests: Hier werden Tests ausgeführt, als wäre das Spiel im normalen Betrieb. Diese Tests werden für UI-Elemente verwendet
+- *PlayMode*-Tests: Hier werden Tests einzelner Komponenten in einer "leeren" Spielwelt ausgeführt. Diese Tests eigenen sich für Domänenlogik, z.B. Controller.
+
+Für die Unterscheidung zwischen UI und Domäne, siehe :ref:`Architektur`.
+
+Die CodeCoverage wird mit einem AddOn ermittelt, welches in der Beta-Version ist, deshalb muss bei der Installation explizit nach AddOns in der Beta-Version gesucht werden.
+
+Typische Probleme Testen
+~~~~~~~~~~~~~~~~~~~~~~~~
+Im *EditorMode* sind einige Probleme bekannt, die hier aufgelistet sind:
+
+| **Problem**: ``start()`` und ``update()``-Methoden von *MonoBehaviour*-Klassen werden nicht aufgerufen.
+| **Lösung**: Benötigte Methoden *public* setzen und selbst aufgerufen
+
+| **Problem**: Auf nächstes Frame warten
+| **Lösung**: ``yield return null`` aufgerufen
+
+| **Problem**: ``destroy`` funktioniert in Tests nicht
+| **Lösung**: Momentan keine Lösung von Unity bereit gestellt
+
+.. _NUnit: https://nunit.org/
+
+Architektur
+-----------

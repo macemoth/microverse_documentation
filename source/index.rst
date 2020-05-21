@@ -10,7 +10,7 @@ Welcome to Microverse's documentation!
    :maxdepth: 2
    :caption: Contents:
 
-   installation
+   devdoc
    userdoc
    spielanleitung
    vision

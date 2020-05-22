@@ -21,10 +21,10 @@ Blender_                       2.82.0 <                Modellierung von Spielele
 
 
 Code und IDE
-----
-*Microverse* ist auf einem eigenen GitLab_-Server gehostet. Der Code kann mit folgendem Befehl geklont werden:
+------------
+*Microverse* ist auf einem eigenen GitLab_-Server gehostet. Der Code kann mit folgendem Befehl geklont werden: ::
 
-``git clone https://microverse.sns.network/microverse/microverse``
+    git clone https://microverse.sns.network/microverse/microverse
 
 In *Unity Hub* ist es wichtig, die Auflösung der *Scene* und des *Game*-Fensters auf 1920x1080 zu setzen, damit das Spiel richtig gerendert wird.
 Für C# Code gelten diese `Code Richtlinien`_
@@ -69,13 +69,12 @@ Im *EditorMode* sind einige Probleme bekannt, die hier aufgelistet sind:
 
 Architektur
 -----------
-In *Microverse* wird Code der UI und der Domäne (Logik) getrennt. Code-Files werden dabei in unterschiedliche Ordnerstrukturen abgelegt:
+In *Microverse* wird Code der UI und der Domäne (Logik) getrennt. Code-Files werden dabei in unterschiedliche Ordnerstrukturen abgelegt: ::
 
-``
-+-- Scripts
-|   +-- Domain
-|   +-- UI
-``
+    +-- Scripts
+    |   +-- Domain
+    |   +-- UI
+
 
 *MonoBehaviour*-Klassen gehören dabei zur *UI*, Views instanziieren Controller (welche die Domäne repräsentieren.
 
@@ -91,10 +90,6 @@ Momentan sind folgende Bugs seitens der Frameworks bekannt:
 | **Lösung**: Default-Wert setzen
 | **Referenz**: `Unity Community SerializedField Roslyn`_
 | **Beispiel**: ``[SerializeField] private Transform _target = default;``
-
-| **Bug**: Der Roslyn Compiler von Unity erkennt nicht, dass *SerializedField* Variablen vom Inspector gesetzt werden und gibt deshalb eine Warnung aus.
-| **Lösung**: Default-Wert setzen
-| **Referenz**: `Unity Community SerializedField Roslyn`_
 
 | **Bug**: Körperteile als Spielwelt weisen Glitches auf, so dass sich der Spieler durch Wände bewegen kann
 | **Lösung**: Keine allgemeine Lösung. Durch höhere Wandstärke konnte das Problem häufig behoben werden.

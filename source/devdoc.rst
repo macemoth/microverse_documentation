@@ -20,11 +20,17 @@ Blender_                       2.82.0 <                Modellierung von Spielele
 .. _`Visual Studio Community`: https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Community&rel=16
 
 
-Code
+Code und IDE
 ----
 *Microverse* ist auf einem eigenen GitLab_-Server gehostet. Der Code kann mit folgendem Befehl geklont werden:
 
 ``git clone https://microverse.sns.network/microverse/microverse``
+
+In *Unity Hub* ist es wichtig, die Auflösung der *Scene* und des *Game*-Fensters auf 1920x1080 zu setzen, damit das Spiel richtig gerendert wird.
+Für C# Code gelten diese `Code Richtlinien`_
+
+.. _`Code Richtlinien`: https://github.com/ktaranov/naming-convention/blob/master/C%23%20Coding%20Standards%20and%20Naming%20Conventions.md
+
 
 Branches
 ~~~~~~~~
@@ -63,3 +69,45 @@ Im *EditorMode* sind einige Probleme bekannt, die hier aufgelistet sind:
 
 Architektur
 -----------
+In *Microverse* wird Code der UI und der Domäne (Logik) getrennt. Code-Files werden dabei in unterschiedliche Ordnerstrukturen abgelegt:
+
+``
++-- Scripts
+|   +-- Domain
+|   +-- UI
+``
+
+*MonoBehaviour*-Klassen gehören dabei zur *UI*, Views instanziieren Controller (welche die Domäne repräsentieren.
+
+Es wird zudem das *Observer*-Pattern verwendet, welches mit dem C#-eigene *EventHandler*-Konstrukt umgesetzt wird.
+
+
+Bugs der Frameworks
+-------------------
+
+Momentan sind folgende Bugs seitens der Frameworks bekannt:
+
+| **Bug**: Der Roslyn Compiler von Unity erkennt nicht, dass *SerializedField* Variablen vom Inspector gesetzt werden und gibt deshalb eine Warnung aus.
+| **Lösung**: Default-Wert setzen
+| **Referenz**: `Unity Community SerializedField Roslyn`_
+| **Beispiel**: ``[SerializeField] private Transform _target = default;``
+
+| **Bug**: Der Roslyn Compiler von Unity erkennt nicht, dass *SerializedField* Variablen vom Inspector gesetzt werden und gibt deshalb eine Warnung aus.
+| **Lösung**: Default-Wert setzen
+| **Referenz**: `Unity Community SerializedField Roslyn`_
+
+| **Bug**: Körperteile als Spielwelt weisen Glitches auf, so dass sich der Spieler durch Wände bewegen kann
+| **Lösung**: Keine allgemeine Lösung. Durch höhere Wandstärke konnte das Problem häufig behoben werden.
+
+.. _`Unity Community SerializedField Roslyn`: https://forum.unity.com/threads/feature-request-use-new-diagnosticsuppressor-api-to-suppress-cs0649-on-serializefield.697514/
+
+Erweiterungen
+-------------
+
+Folgende Erweiterungen und Ideen bieten sich für die mittelfristige Umsetzung an:
+
+- Persistenz (d.h. Speichern des Spielstandes)
+- Leistungsoptimierung (z.B. durch Unity Optimierer)
+- Simultanes Updaten aller HUDs
+- Sound (Hintergrundmusik und -effekte wie z.B. Herzschlag, Geräusche bei Handlungen)
+- Einführung eines Abwehrsystems des Körpers

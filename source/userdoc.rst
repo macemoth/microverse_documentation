@@ -11,6 +11,6 @@ Downloads
 - `Microverse für Linux`_ (ungetestet)
 - `Microverse für Mac OS`_ (ungetestet)
 
-.. _`Microverse für Windows`: https://docs.microverse.sns.network/Microverse.exe
-.. _`Microverse für Linux`: https://docs.microverse.sns.network/Microverse.exe
-.. _`Microverse für Mac OS`: https://docs.microverse.sns.network/Microverse.exe
+.. _`Microverse für Windows`: https://github.zhaw.ch/Microverse/microverse/releases/download/v1.0/windows.zip
+.. _`Microverse für Linux`: https://github.zhaw.ch/Microverse/microverse/releases/download/v1.0/linux.zip
+.. _`Microverse für Mac OS`: https://github.zhaw.ch/Microverse/microverse/releases/download/v1.0/mac.zip
